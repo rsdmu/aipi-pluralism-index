@@ -3,18 +3,21 @@
   --panel: #10161f;
   --text: #e5e9f0;
   --muted: #a7b1c2;
-  --accent: #4f46e5;
+  --accent: #00BFFF;
   --border: #1f2a37;
   --good: #16a34a;
   --warn: #f59e0b;
 }
 *{box-sizing:border-box}
 html,body{padding:0;margin:0}
+
 body{
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, -apple-system,
+               "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   background: var(--bg);
   color: var(--text);
 }
+
 a{color:var(--accent); text-decoration:none}
 a:hover{text-decoration:underline}
 .container{

@@ -1,4 +1,12 @@
 import './globals.css';
+import { Space_Grotesk } from 'next/font/google';
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  weight: ['300','400','500','600','700'],
+  variable: '--font-space-grotesk',
+  display: 'swap',
+});
 
 export const metadata = {
   title: 'AI Pluralism Index (AIPI)',
@@ -10,7 +18,8 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
+      {/* added */}
+      <body className={spaceGrotesk.variable}>
         <a href="#main" style={{position:'absolute',left:-9999}} className="skip">Skip to content</a>
         <div className="container">
           <header className="header">

@@ -1,0 +1,12 @@
+# Node / Next
+node_modules/
+.next/
+.turbo/
+out/
+.vercel/
+.env*
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+# macOS
+.DS_Store

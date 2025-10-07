@@ -1,0 +1,162 @@
+provider_id,provider_name,system_family,aipi_score,rank,Participatory governance,Inclusivity & diversity,Transparency,Accountability,entity_type,hq_country,provider_website,system_category,modality,access,license_or_terms,open_weights
+grw_microsoft_planet_tnc," ""Microsoft, Planet Labs, The Nature Conservancy""", Global Renewables Watch (GRW),0.0,1,,,,, consortium, International, https://www.globalrenewableswatch.org/, Vision detection, image, Web portal & datasets, Terms of use, No
+01-ai, 01.AI, Yi family,0.0,1,,,,, company, China, https://01.ai/, LLM, text, Open weights + API, Apache-2.0/custom, Partial
+aisg, AI Singapore, SEA-LION,0.0,1,,,,, government, Singapore, https://aisingapore.org/, LLM (SEA languages), text, Open weights, Apache-2.0, Yes
+ai_sweden, AI Sweden, GPT‑SW3,0.0,1,,,,, government, Sweden, https://www.ai.se/, LLM (Swedish), text, Open weights + API, OpenRAIL/Apache-2.0, Yes
+ai21, AI21 Labs, Jurassic (J2/J3),0.0,1,,,,, company, Israel, https://www.ai21.com/, LLM, text, API, AI21 Terms, No
+ai4bharat, AI4Bharat (IIT Madras), IndicTrans / IndicLLMs,0.0,1,,,,, academic, India, https://ai4bharat.iitm.ac.in/, LLM/MT, text, Open weights, Apache-2.0, Yes
+ai4d, AI4D Africa, African NLP models,0.0,1,,,,, consortium, Africa, https://ai4d.ai/, LM, text, Open weights, Various, Yes
+armman_kilkari_ai, ARMMAN, Kilkari AI engagement model,0.0,1,,,,, non-profit, India, https://armman.org/, Forecasting," ""tabular,metadata""", Internal (with partners), N/A, No
+abacus, Abacus.AI, Smaug,0.0,1,,,,, company, USA, https://abacus.ai/, LLM, text, Open weights + API, Apache-2.0, Partial
+adept, Adept AI, ACT-1,0.0,1,,,,, company, USA, https://www.adept.ai/, Agentic (LM), text, API, Adept Terms, No
+adobe, Adobe, Firefly,0.0,1,,,,, company, USA, https://www.adobe.com/, Diffusion (image/text effects), image, API + Apps, Adobe Terms, No
+alephalpha, Aleph Alpha, Luminous,0.0,1,,,,, company, Germany, https://www.aleph-alpha.com/, LLM (multilingual), text, API, Aleph Alpha Terms, No
+alibaba, Alibaba Cloud, Qwen (Qwen2.5/Qwen3),0.0,1,,,,, company, China, https://www.alibabacloud.com/, LLM (and VLM)," ""text,image""", Open weights + API, Qwen License, Yes
+allegro, Allegro (PL), HerBERT,0.0,1,,,,, company, Poland, https://allegro.tech/, LM (Polish), text, Open weights, MIT/Apache-2.0, Yes
+ai2_earthranger, Allen Institute for AI (AI2), EarthRanger,0.0,1,,,,, non-profit, USA, https://allenai.org/, Assistant," ""text,image,geospatial""", SaaS (conservation partners), Terms of use, No
+ai2, Allen Institute for AI (AI2), OLMo,0.0,1,,,,, non-profit, USA, https://allenai.org/, LLM, text, Open weights, Apache-2.0, Yes
+ai2_skylight, Allen Institute for AI (AI2), Skylight,0.0,1,,,,, non-profit, USA, https://allenai.org/, Vision detection," ""image,metadata""", Hosted platform (enforcement partners), Terms of use, No
+ai2_wildlands, Allen Institute for AI (AI2), Wildlands,0.0,1,,,,, non-profit, USA, https://allenai.org/, Vision detection, image, Research + partner tools, N/A, No
+amazon, Amazon, Amazon Titan,0.0,1,,,,, company, USA, https://aws.amazon.com/ai/, LLM/VLM," ""text,image""", API (Bedrock), AWS Service Terms, No
+anthropic, Anthropic, Claude 3.x / 4.x Sonnet/Opus/Haiku,0.0,1,,,,, company, USA, https://www.anthropic.com/, LLM (multimodal)," ""text,image""", API + Apps, Anthropic Terms of Service, No
+apple, Apple, OpenELM / MLX community models,0.0,1,,,,, company, USA, https://machinelearning.apple.com/, LLM (small), text, Open weights (OpenELM), Apple OpenELM License, Yes
+spacy_es, BSC & UPV, RoBERTa-BNE,0.0,1,,,,, academic, Spain, https://www.bsc.es/, LM (Spanish), text, Open weights, MIT, Yes
+baichuan, Baichuan AI, Baichuan 2,0.0,1,,,,, company, China, https://www.baichuan.ai/, LLM, text, Open weights + API, Baichuan License, Partial
+baidu, Baidu, ERNIE Bot (Wenxin Yiyan),0.0,1,,,,, company, China, https://ai.baidu.com/, LLM (multimodal)," ""text,image""", API + Apps, Baidu Terms, No
+baai, Beijing Academy of AI (BAAI), Aquila / WuDao,0.0,1,,,,, government, China, https://www.baai.ac.cn/, LLM, text, Open weights (Aquila), Apache-2.0/custom, Partial
+bigcode, BigCode (ServiceNow + HF), StarCoder2,0.0,1,,,,, consortium, International, https://www.bigcode-project.org/, LLM (code), text, Open weights, BigCode License (OpenRAIL), Yes
+bigscience, BigScience, BLOOM,0.0,1,,,,, consortium, France, https://bigscience.huggingface.co/, LLM, text, Open weights, RII License (RAIL variant)/BigScience OpenRAIL-M, Yes
+birdvision, BirdVision GmbH & Co. KG, BirdVision,0.0,1,,,,, company, Germany, https://birdvision.org/, Vision detection," ""image,video""", Commercial systems, Proprietary, No
+bloomberg, Bloomberg, BloombergGPT,0.0,1,,,,, company, USA, https://www.bloomberg.com/, LLM (finance), text, Research API/internal, Proprietary, No
+botalite_factalite, Botalite, Factalite,0.0,1,,,,, company, Spain, https://botalite.es/, Assistant," ""text,audio,image,video""", SaaS, Terms of service, No
+bytedance, ByteDance, Doubao,0.0,1,,,,, company, China, https://www.bytedance.com/, LLM, text, API/Apps, Bytedance Terms, No
+clarinpl, CLARIN-PL, Polish RoBERTa,0.0,1,,,,, government, Poland, https://clarin-pl.eu/, LM (Polish), text, Open weights, Apache-2.0, Yes
+calpoly_iatpp_ai_for_reporters, Cal Poly Institute for Advanced Technology and Public Policy (IATPP), AI for Reporters (Digital Democracy),0.0,1,,,,, academic, USA, https://iatpp.calpoly.edu, Assistant, text, Hosted (no public API), N/A, No
+cerebras, Cerebras Systems, Cerebras-GPT,0.0,1,,,,, company, USA, https://www.cerebras.net/, LLM, text, Open weights, Apache-2.0, Yes
+characterai, Character.AI, Character models (C1 family),0.0,1,,,,, company, USA, https://beta.character.ai/, LLM, text, Apps/API (limited), Proprietary, No
+charamel_avasag, Charamel GmbH, AVASAG (Sign Language Avatar),0.0,1,,,,, company, Germany, https://charamel.com/, Text-to-sign avatar," ""text,video""", Project / research demo, N/A, No
+cirrolytix_aedes, CirroLytix Research Services, Project AEDES,0.0,1,,,,, company, Philippines, https://cirrolytix.com/, Forecasting," ""tabular,image""", Web app & dashboards, Terms of use, No
+amsterdam_reporting_issues, City of Amsterdam, Reporting issues in public space (auto-categorization),0.0,1,,,,, government, Netherlands, https://algoritmeregister.amsterdam.nl/en/ai-register/, Assistant," ""text,image,metadata""", Internal municipal system, N/A, No
+berlin_bobbi, City of Berlin (ITDZ Berlin & TU Berlin DAI-Lab), Bobbi,0.0,1,,,,, government, Germany, https://service.berlin.de/, Assistant, text, Hosted (chatbot), Terms of use, No
+hamburg_frag_den_michel, City of Hamburg, Frag-den-Michel,0.0,1,,,,, government, Germany, https://www.hamburg.de/, Assistant, text, Hosted (chatbot), Terms of use, No
+helsinki_obotti, City of Helsinki, Obotti (Oodi book recommendation chatbot),0.0,1,,,,, government, Finland, https://ai.hel.fi/, Assistant, text, Retired (historical), App terms, No
+citylab_berlin_qtrees, CityLAB Berlin (Technologiestiftung Berlin), QTrees (Baumblick),0.0,1,,,,, non-profit, Germany, https://citylab-berlin.org/, Forecasting," ""sensor,tabular""", Web apps (open source), Open source, Partial
+climatetrace, Climate TRACE coalition, Climate TRACE,0.0,1,,,,, non-profit, International, https://climatetrace.org, Vision detection," ""image,metadata""", Hosted (public dashboards), Terms of use, No
+cloudflare_ai, Cloudflare, Workers AI (hosted foundation models),0.0,1,,,,, company, USA, https://www.cloudflare.com/, Hosting platform," ""text,image""", API, Cloudflare Terms, No
+cohere, Cohere, Command / Embed / Rerank,0.0,1,,,,, company, Canada, https://cohere.com/, LLM + Embeddings, text, API, Cohere Terms, No
+coqui, Coqui AI, XTTS / TTS family,0.0,1,,,,, company, Germany, https://coqui.ai/, TTS, audio, Open weights + API, Various OSS, Partial
+dccuchile, DCC UChile, BETO (Spanish BERT),0.0,1,,,,, academic, Chile, https://www.dcc.uchile.cl/, LM (Spanish), text, Open weights, MIT, Yes
+databricks, Databricks, DBRX,0.0,1,,,,, company, USA, https://www.databricks.com/, LLM, text, Open weights + API, Databricks Open Model License (Dbrx-OML), Yes
+deepL, DeepL, DeepL LLM / Write,0.0,1,,,,, company, Germany, https://www.deepl.com/, LLM (translation/writing), text, Apps/API, DeepL Terms, No
+deeppavlov, DeepPavlov, ruGPT / rubert,0.0,1,,,,, academic, Russia, https://deeppavlov.ai/, LM (Russian), text, Open weights, Apache-2.0, Yes
+deepseek, DeepSeek, DeepSeek-V3 / DeepSeek-R1,0.0,1,,,,, company, China, https://deepseek.com/, LLM, text, Open weights + API, DeepSeek License, Partial
+drivendata_zamba, DrivenData, Zamba,0.0,1,,,,, company, USA, https://www.drivendata.org/, Vision detection," ""image,video""", Open source & SaaS (Zamba Cloud), Open source (code) + Terms for cloud, Yes
+boston_yelp_health_risk, DrivenData + City of Boston + Yelp + Harvard, Restaurant risk prediction (Boston),0.0,1,,,,, consortium, USA, https://drivendata.co/, NLP classification, text, Research project, N/A, No
+elyza, ELYZA, ELYZA Japanese LLMs,0.0,1,,,,, company, Japan, https://elyza.ai/, LLM (Japanese), text, Open weights, Apache-2.0, Yes
+eleutherai, EleutherAI, GPT‑NeoX / GPT-J,0.0,1,,,,, non-profit, International, https://www.eleuther.ai/, LLM, text, Open weights, Apache-2.0, Yes
+elevenlabs, ElevenLabs, Eleven Multilingual v2,0.0,1,,,,, company, USA, https://elevenlabs.io/, TTS/ASR, audio, API + Apps, ElevenLabs Terms, No
+estonia_euif_ott, Estonian Unemployment Insurance Fund (EUIF), OTT (Decision Support Tool),0.0,1,,,,, government, Estonia, https://www.tootukassa.ee/, Forecasting, tabular, Internal decision support, N/A, No
+fullfact_ai, Full Fact, Full Fact AI,0.0,1,,,,, non-profit, UK, https://fullfact.org/, Assistant," ""text,audio,video""", SaaS (for fact-checkers), Terms of use, No
+genderly, Genderly team (Prototype Fund), Genderly,0.0,1,,,,, non-profit, Germany, https://gendern.jetzt/, Assistant, text, Web app & browser extension, Open source (GitHub), Partial
+google_gemma, Google, Gemma 2,0.0,1,,,,, company, USA, https://ai.google/, LLM (small), text, Open weights, Gemma License, Yes
+google_imagen, Google, Imagen,0.0,1,,,,, company, USA, https://ai.google/, Diffusion (image), image, API/Apps, Proprietary, No
+google, Google (DeepMind), Gemini (Ultra/Pro/Nano/Flash),0.0,1,,,,, company, USA, https://ai.google/, LLM (multimodal)," ""text,image,video,audio""", API + Apps; some open weights (Gemma), Google Terms; Gemma license, Partial
+govii, Govii UG, Govii,0.0,1,,,,, company, Germany, https://govii.de/, Assistant, text, Hosted (chatbot), Terms of use, No
+huridocs_uwazi, HURIDOCS, Uwazi,0.0,1,,,,, non-profit, Switzerland, https://huridocs.org/, Document management, text, Open source software, Open source, Yes
+helsinki_nlp, Helsinki-NLP, OPUS-MT,0.0,1,,,,, academic, Finland, https://github.com/Helsinki-NLP, Machine Translation, text, Open weights, Apache-2.0, Yes
+huawei, Huawei, PanGu,0.0,1,,,,, company, China, https://www.noahlab.com.hk/, LLM/Time-series, text, API, Huawei Terms, No
+hf, Hugging Face, Zephyr,0.0,1,,,,, company, USA, https://huggingface.co/, LLM, text, Open weights, Apache-2.0, Yes
+ibm, IBM, Granite,0.0,1,,,,, company, USA, https://www.ibm.com/, LLM, text, Open weights + watsonx API, Apache-2.0/IBM T&Cs, Partial
+ibm_granite_code, IBM, Granite Code,0.0,1,,,,, company, USA, https://www.ibm.com/, LLM (code), text, Open weights + API, Apache-2.0, Yes
+idea_research, IDEA Research, Grounding DINO,0.0,1,,,,, academic, China, https://www.idea.edu.cn/, Vision detection, image, Open weights, Apache-2.0, Yes
+inria, INRIA/CNRS/Sorbonne, CamemBERT,0.0,1,,,,, academic, France, https://www.inria.fr/, LM (French), text, Open weights, MIT/Apache-2.0, Yes
+iu_osome_botometer, Indiana University (OSoMe & IUNI), Botometer,0.0,1,,,,, academic, USA, https://osome.iu.edu, NLP classification," ""text,metadata""", Web app & API, Terms of service, No
+indonlp, IndoNLU (IndoNLP), IndoBERT,0.0,1,,,,, consortium, Indonesia, https://indonlp.github.io/, LM (Indonesian), text, Open weights, Apache-2.0, Yes
+inflection, Inflection AI, Inflection-1,0.0,1,,,,, company, USA, https://inflection.ai/, LLM, text, Apps/API (historic), Proprietary, No
+idmc_idetect, Internal Displacement Monitoring Centre (IDMC), IDETECT,0.0,1,,,,, non-profit, Switzerland, https://www.internal-displacement.org/, NLP classification, text, Internal platform & dashboards, N/A, No
+jina, Jina AI, Jina Embeddings / CLIP variants,0.0,1,,,,, company, Germany, https://jina.ai/, Embeddings / VLM," ""text,image""", API / Open weights, Apache-2.0, Partial
+minigpt4, KAUST Vision-CAIR, MiniGPT-4,0.0,1,,,,, academic, Saudi Arabia, https://minigpt-4.github.io/, VLM," ""text,image""", Open weights, Apache-2.0, Yes
+kakaobrain, Kakao Brain, KoGPT,0.0,1,,,,, company, Korea, https://www.kakaobrain.com/, LLM (Korean), text, Open weights + API, Kakao License/Apache-2.0, Partial
+krutrim, Krutrim (Ola), Krutrim LLM,0.0,1,,,,, company, India, https://www.krutrim.com/, LLM (Indic), text, Apps/API, Krutrim Terms, No
+kyutai, Kyutai, Moshi,0.0,1,,,,, non-profit, France, https://www.kyutai.org/, Voice assistant model," ""audio,text""", Open research + demos, Custom, Partial
+lgai, LG AI Research, EXAONE,0.0,1,,,,, company, Korea, https://www.lgresearch.ai/, LLM (multimodal)," ""text,image""", API/Apps + open samples, LG Terms, Partial
+llava, LLaVA Team (Berkeley/UCLA/CMU), LLaVA,0.0,1,,,,, academic, USA, https://llava-vl.github.io/, VLM (vision-language)," ""text,image""", Open weights, Apache-2.0, Yes
+lmsys, LMSYS (UC Berkeley), Vicuna,0.0,1,,,,, academic, USA, https://lmsys.org/, LLM (chat), text, Open weights, Non-commercial (LLaMA-based), Partial
+lnu_lm, LMU/LAION, LeoLM,0.0,1,,,,, consortium, Germany, https://laion.ai/, LLM (German), text, Open weights, Apache-2.0, Yes
+luma, Luma AI, Dream Machine,0.0,1,,,,, company, USA, https://lumalabs.ai/, Video generation, video, SaaS / API, Luma Terms, No
+mbzuai, MBZUAI / Inception (G42), Jais,0.0,1,,,,, government, UAE, https://mbzuai.ac.ae/, LLM (Arabic/English), text, Open weights + API, Apache-2.0, Partial
+masakhane, Masakhane, AfriBERTa,0.0,1,,,,, non-profit, Pan-Africa, https://www.masakhane.io/, LM (African langs), text, Open weights, Apache-2.0, Yes
+masakhane_ner, Masakhane, MasakhaNER,0.0,1,,,,, non-profit, Kenya, https://www.masakhane.io/, NLP (dataset + models), text, Open source dataset & models, Open source, Yes
+meta_audio, Meta, AudioCraft / MusicGen,0.0,1,,,,, company, USA, https://ai.meta.com/, Audio generation, audio, Open weights, MIT, Yes
+meta, Meta, Llama 3.x,0.0,1,,,,, company, USA, https://ai.meta.com/, LLM, text, Open weights; hosted APIs, Llama 3 license, Yes
+meta_seamless, Meta, SeamlessM4T,0.0,1,,,,, company, USA, https://ai.meta.com/, Speech Translation," ""audio,text""", Open weights, CC BY-NC 4.0, Partial
+meta_sam, Meta, Segment Anything (SAM),0.0,1,,,,, company, USA, https://ai.meta.com/, Vision segmentation, image, Open weights, Apache-2.0, Yes
+microsoft_cosmos, Microsoft, Kosmos-2,0.0,1,,,,, company, USA, https://www.microsoft.com/research/, VLM," ""text,image""", Research (open weights), MIT, Yes
+microsoft, Microsoft, Phi 3/4 family,0.0,1,,,,, company, USA, https://www.microsoft.com/ai, LLM (small), text, Open weights + Azure API, MIT-like/Custom (varies), Partial
+midjourney, Midjourney, Midjourney,0.0,1,,,,, company, USA, https://www.midjourney.com/, Diffusion (image), image, SaaS, Midjourney Terms, No
+mistral, Mistral AI, Mistral/Mixtral,0.0,1,,,,, company, France, https://mistral.ai/, LLM, text, Open weights + API, MPL/Mistral License, Partial
+syrian_archive, Mnemonic / Syrian Archive, Syrian Archive (OSINT pipeline),0.0,1,,,,, non-profit, Germany, https://syrianarchive.org/, Vision detection," ""image,video,text""", Web platform, Terms of use, No
+mosaicml, MosaicML (Databricks), MPT,0.0,1,,,,, company, USA, https://www.mosaicml.com/, LLM, text, Open weights, Apache-2.0, Yes
+nectec, NECTEC (Thailand), WangchanGLM,0.0,1,,,,, government, Thailand, https://www.nectec.or.th/, LLM (Thai), text, Open weights, Apache-2.0, Yes
+unicamp, NILC (USP/UNICAMP), BERTimbau,0.0,1,,,,, academic, Brazil, http://nilc.icmc.usp.br/, LM (Portuguese), text, Open weights, MIT, Yes
+nvidia, NVIDIA, Nemotron,0.0,1,,,,, company, USA, https://www.nvidia.com/ai/, LLM, text, Open weights + NIM API, NVIDIA License (varies by model), Partial
+nvidia_parakeet, NVIDIA, Parakeet,0.0,1,,,,, company, USA, https://research.nvidia.com/, TTS, audio, Open weights, MIT, Yes
+nvidia_riva, NVIDIA, Riva TTS/ASR,0.0,1,,,,, company, USA, https://developer.nvidia.com/riva, TTS/ASR, audio, API/SDK, NVIDIA Terms, No
+naver, Naver, HyperCLOVA X,0.0,1,,,,, company, Korea, https://www.navercloudcorp.com/, LLM (Korean), text, API/Apps, Naver Terms, No
+nomic, Nomic AI, Nomic Embeddings,0.0,1,,,,, company, USA, https://www.nomic.ai/, Embeddings, text, Open weights + API, Apache-2.0, Partial
+nous, Nous Research, Hermes,0.0,1,,,,, company, USA, https://www.nousresearch.com/, LLM, text, Open weights + API (via hosts), Apache-2.0/other, Partial
+openai, OpenAI, GPT-4o / o1 / o3 / GPT-4 family,0.0,1,,,,, company, USA, https://openai.com/, LLM (multimodal)," ""text,image,video,audio""", API + Apps, OpenAI Terms of Use, No
+openai_whisper, OpenAI, Whisper,0.0,1,,,,, company, USA, https://openai.com/, ASR, audio, Open weights + API, MIT, Yes
+openassistant, OpenAssistant (LAION), OASST models,0.0,1,,,,, non-profit, International, https://open-assistant.io/, LLM (chat), text, Open weights, Apache-2.0/RAIL, Yes
+minicpm, OpenBMB, MiniCPM,0.0,1,,,,, consortium, China, https://www.openbmb.org/, LLM (small), text, Open weights, Apache-2.0, Yes
+openbmb_qwen2vl, OpenBMB, MiniCPM-V,0.0,1,,,,, consortium, China, https://www.openbmb.org/, VLM," ""text,image""", Open weights, Apache-2.0, Yes
+openflamingo, OpenFlamingo (LAION/AllenAI), OpenFlamingo,0.0,1,,,,, consortium, International, https://github.com/mlfoundations/open_flamingo, VLM," ""text,image""", Open weights, Apache-2.0, Yes
+openorca, OpenOrca, OpenOrca,0.0,1,,,,, community, International, https://huggingface.co/Open-Orca, LLM (instruction), text, Open weights, OpenRAIL, Yes
+plantix, PEAT GmbH, Plantix,0.0,1,,,,, company, Germany, https://plantix.net/en/, Vision detection, image, Mobile app, App terms, No
+perplexity, Perplexity, pplx-70b / pplx-7b (hosted),0.0,1,,,,, company, USA, https://www.perplexity.ai/, LLM, text, API, Perplexity Terms, No
+pika, Pika Labs, Pika 1.0,0.0,1,,,,, company, USA, https://pika.art/, Video generation (diffusion), video, SaaS, Pika Terms, No
+planblue, PlanBlue GmbH, PlanBlue Seafloor Intelligence,0.0,1,,,,, company, Germany, https://www.planblue.com/, Vision detection," ""image,video""", Commercial services, Proprietary, No
+planTL, PlanTL-GOB (BSC), MarIA,0.0,1,,,,, government, Spain, https://pln.gov.es/en, LLM (Spanish), text, Open weights, Apache-2.0, Yes
+princeton_nlp, Princeton/NVIDIA/UMD, Dolly (Databricks)??,0.0,1,,,,, academic, USA, https://nlp.cs.princeton.edu/, LLM, text, Open weights, Databricks Terms, Yes
+qcri, Qatar Computing Research Institute (QCRI), AraBERT,0.0,1,,,,, government, Qatar, https://www.qcri.org/, LM (Arabic), text, Open weights, Apache-2.0, Yes
+360, Qihoo 360, 360GLM,0.0,1,,,,, company, China, https://www.360.cn/, LLM, text, Open weights + API, 360 License, Partial
+rainforest_connection_arbimon, Rainforest Connection (RFCx), Arbimon,0.0,1,,,,, non-profit, USA, https://rfcx.org/, Audio classification, audio, SaaS (research & NGO), Terms of use, No
+reka, Reka AI, Reka Core / Flash / Edge,0.0,1,,,,, company, USA, https://www.reka.ai/, LLM (multimodal)," ""text,image""", API, Reka Terms, No
+runway, Runway, Gen-3 Alpha,0.0,1,,,,, company, USA, https://runwayml.com/, Video generation (diffusion), video, SaaS / API, Runway Terms, No
+sap, SAP, Joule (SAP AI),0.0,1,,,,, company, Germany, https://www.sap.com/, Assistant, text, API/Apps, SAP Terms, No
+salesforce, Salesforce, xGen / CodeGen,0.0,1,,,,, company, USA, https://www.salesforceairesearch.com/, LLM (code + text), text, Open weights, Apache-2.0, Yes
+sarvam, Sarvam AI, OpenHathi / Sarvam models,0.0,1,,,,, company, India, https://www.sarvam.ai/, LLM (Indic), text, Open weights + API, Apache-2.0/custom, Partial
+sdaia, Saudi Data & AI Authority (SDAIA), ALLaM,0.0,1,,,,, government, Saudi Arabia, https://sdaia.gov.sa/, LLM (Arabic), text, API/Apps, SDAIA Terms, No
+sber, Sber AI, GigaChat,0.0,1,,,,, company, Russia, https://sberbank.com/, LLM (Russian), text, API/Apps, Sber Terms, No
+sensetime, SenseTime, SenseNova,0.0,1,,,,, company, China, https://www.sensetime.com/, LLM/VLM," ""text,image""", API/Apps, SenseTime Terms, No
+internlm, Shanghai AI Lab, InternLM,0.0,1,,,,, government, China, https://www.shlab.org.cn/, LLM, text, Open weights, Apache-2.0, Yes
+siloai, Silo AI, Poro,0.0,1,,,,, company, Finland, https://www.silo.ai/, LLM (Nordic), text, Open weights + API, Apache-2.0, Partial
+snowflake, Snowflake, Arctic,0.0,1,,,,, company, USA, https://www.snowflake.com/, LLM (retrieval-optimized), text, Open weights + API, Apache-2.0/Snowflake Terms, Partial
+stability_audio, Stability AI, Stable Audio,0.0,1,,,,, company, UK, https://stability.ai/, Audio generation, audio, API, Proprietary, No
+stability, Stability AI, Stable Diffusion (SDXL/3),0.0,1,,,,, company, UK, https://stability.ai/, Diffusion (image), image, Open weights + API, CreativeML/OpenRAIL, Yes
+stanford, Stanford CRFM, Alpaca,0.0,1,,,,, academic, USA, https://crfm.stanford.edu/, LLM (instruction), text, Open weights, Creative Commons Non-Commercial (derivative of LLaMA), Partial
+suno, Suno, Suno v3 (and Bark open),0.0,1,,,,, company, USA, https://www.suno.ai/, Music/TTS, audio, SaaS / API, Suno Terms, Partial
+synthesia, Synthesia, Synthesia Avatars,0.0,1,,,,, company, UK, https://www.synthesia.io/, Text-to-Video (avatars), video, SaaS/API, Synthesia Terms, No
+thudm, THUDM (Tsinghua), ChatGLM-6B,0.0,1,,,,, academic, China, https://thudm.cn/, LLM, text, Open weights, Apache-2.0, Yes
+flora_incognita, TU Ilmenau & Max Planck Institute (MPI-Jena), Flora Incognita,0.0,1,,,,, academic, Germany, https://floraincognita.com/, Vision detection, image, Mobile apps (iOS/Android), App terms, No
+tu_berlin_gca, Technische Universität Berlin, Green Consumption Assistant (GCA),0.0,1,,,,, academic, Germany, https://www.tu.berlin/, Assistant," ""text,web""", Browser integration (Ecosia), Project terms, No
+tii, Technology Innovation Institute (TII), Falcon,0.0,1,,,,, government, UAE, https://www.tii.ae/, LLM, text, Open weights + API, Falcon License, Yes
+teknium, Teknium, OpenHermes,0.0,1,,,,, community, USA, https://huggingface.co/teknium, LLM (instruction), text, Open weights, Apache-2.0, Yes
+tencent, Tencent AI Lab, Hunyuan,0.0,1,,,,, company, China, https://ai.tencent.com/, LLM (multimodal)," ""text,image""", API + some open, Tencent Terms, Partial
+theoceancleanup_adis, The Ocean Cleanup, ADIS (AI Debris Identification System),0.0,1,,,,, non-profit, Netherlands, https://theoceancleanup.com, Vision detection," ""image,video""", Project / research (no public API), N/A, No
+tinyllama, TinyLlama, TinyLlama,0.0,1,,,,, consortium, International, https://github.com/jzhang38/TinyLlama, LLM (small), text, Open weights, Apache-2.0, Yes
+together, Together AI, Struqta/RedPajama family hosting,0.0,1,,,,, company, USA, https://www.together.ai/, LLM hosting / curation, text, API, Together Terms, No
+turkunlp, TurkuNLP (University of Turku), FinBERT,0.0,1,,,,, academic, Finland, https://turkunlp.org/, LM (Finnish), text, Open weights, Apache-2.0, Yes
+ukp, UKP Lab (TU Darmstadt), SentenceTransformers,0.0,1,,,,, academic, Germany, https://www.ukp.tu-darmstadt.de/, Embeddings, text, Open weights, Apache-2.0, Yes
+unicef_itu_giga_project_connect, UNICEF + ITU (Giga), Project Connect,0.0,1,,,,, consortium, International, https://giga.global/, Vision detection," ""image,metadata""", Public map & APIs, Terms of use, No
+unicef_kindly, UNICEF Office of Innovation, Kindly (anti-cyberbullying API),0.0,1,,,,, non-profit, International, https://www.unicef.org/innovation, Assistant, text, Open API, Open source, Yes
+usc_paws, USC Center for AI in Society (CAIS) / Harvard CRCS, PAWS (Protection Assistant for Wildlife Security),0.0,1,,,,, academic, USA, https://cais.usc.edu/, Planning," ""tabular,geospatial""", Deployed research, N/A, No
+uio_nlp, University of Oslo NLP, NorBERT,0.0,1,,,,, academic, Norway, https://www.mn.uio.no/ifi/english/research/groups/ltg/, LM (Norwegian), text, Open weights, Apache-2.0, Yes
+vframe, VFRAME.io, VFRAME,0.0,1,,,,, non-profit, Germany, https://vframe.io/, Vision detection," ""image,video""", Open-source tools + research, Open source (various), Partial
+vinai, VinAI, PhoBERT,0.0,1,,,,, company, Vietnam, https://www.vinai.io/, LM (Vietnamese), text, Open weights, MIT, Yes
+voyage, Voyage AI, Voyage Embeddings,0.0,1,,,,, company, USA, https://www.voyageai.com/, Embeddings, text, API, Voyage Terms, No
+yandex, Yandex, YaLM,0.0,1,,,,, company, Russia, https://yandex.com/, LLM (Russian), text, Open weights + API, Apache-2.0/custom, Partial
+zhipuai, Zhipu AI, GLM / ChatGLM / GLM-4,0.0,1,,,,, company, China, https://www.zhipuai.cn/, LLM, text, Open weights + API, Apache-2.0/custom, Partial
+iflytek, iFLYTEK, Spark (Xinghuo),0.0,1,,,,, company, China, https://www.iflytek.com/, LLM (Chinese), text, API/Apps, iFLYTEK Terms, No
+rinna, rinna, Japanese LLMs,0.0,1,,,,, company, Japan, https://company.rinna.co.jp/en/, LLM (Japanese), text, Open weights + API, Various OSS, Partial
+xai, xAI, Grok,0.0,1,,,,, company, USA, https://x.ai/, LLM, text, API + Apps, xAI Terms, No

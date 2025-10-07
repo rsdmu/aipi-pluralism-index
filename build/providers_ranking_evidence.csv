@@ -1,0 +1,162 @@
+provider_id,provider_name,Accountability,Inclusivity & diversity,Participatory governance,Transparency,AIPI,coverage,rank
+openai,OpenAI,0.6,0.0,0.35,0.35,0.32499999999999996,0.4,1
+anthropic,Anthropic,0.4,0.0,0.25,0.15,0.2,0.275,2
+stability,Stability AI,0.1,0.0,0.1,0.5,0.175,0.175,3
+mistral,Mistral AI,0.0,0.0,0.2,0.45,0.1625,0.175,4
+google,Google (DeepMind),0.2,0.0,0.15,0.25,0.15,0.225,5
+alibaba,Alibaba Cloud,0.2,0.0,0.1,0.25,0.1375,0.175,6
+meta,Meta,0.2,0.0,0.1,0.25,0.1375,0.175,7
+climatetrace,Climate TRACE coalition,0.0,0.0,0.15,0.4,0.1375,0.15,8
+bigscience,BigScience,0.0,0.0,0.05,0.5,0.1375,0.15,9
+unicef_kindly,UNICEF Office of Innovation,0.0,0.0,0.25,0.3,0.1375,0.15,10
+eleutherai,EleutherAI,0.0,0.0,0.05,0.5,0.1375,0.15,11
+clarinpl,CLARIN-PL,0.0,0.0,0.05,0.45,0.125,0.15,12
+cohere,Cohere,0.2,0.0,0.15,0.15,0.125,0.2,13
+nectec,NECTEC (Thailand),0.0,0.0,0.05,0.45,0.125,0.15,14
+nous,Nous Research,0.0,0.0,0.05,0.45,0.125,0.15,15
+dccuchile,DCC UChile,0.0,0.0,0.05,0.45,0.125,0.15,16
+nvidia_parakeet,NVIDIA,0.0,0.0,0.05,0.45,0.125,0.15,17
+indonlp,IndoNLU (IndoNLP),0.0,0.0,0.05,0.45,0.125,0.15,18
+openai_whisper,OpenAI,0.0,0.0,0.05,0.45,0.125,0.15,19
+elyza,ELYZA,0.0,0.0,0.05,0.45,0.125,0.15,20
+minicpm,OpenBMB,0.0,0.0,0.05,0.45,0.125,0.15,21
+openbmb_qwen2vl,OpenBMB,0.0,0.0,0.05,0.45,0.125,0.15,22
+meta_audio,Meta,0.0,0.0,0.05,0.45,0.125,0.15,23
+mbzuai,MBZUAI / Inception (G42),0.0,0.0,0.05,0.45,0.125,0.15,24
+masakhane,Masakhane,0.0,0.0,0.05,0.45,0.125,0.15,25
+lnu_lm,LMU/LAION,0.0,0.0,0.05,0.45,0.125,0.15,26
+kakaobrain,Kakao Brain,0.0,0.0,0.05,0.45,0.125,0.15,27
+hf,Hugging Face,0.0,0.0,0.05,0.45,0.125,0.15,28
+jina,Jina AI,0.0,0.0,0.05,0.45,0.125,0.15,29
+ibm,IBM,0.0,0.0,0.05,0.45,0.125,0.15,30
+ibm_granite_code,IBM,0.0,0.0,0.05,0.45,0.125,0.15,31
+internlm,Shanghai AI Lab,0.0,0.0,0.05,0.45,0.125,0.15,32
+openassistant,OpenAssistant (LAION),0.0,0.0,0.05,0.45,0.125,0.15,33
+01-ai,01.AI,0.0,0.0,0.05,0.45,0.125,0.15,34
+planTL,PlanTL-GOB (BSC),0.0,0.0,0.05,0.45,0.125,0.15,35
+baai,Beijing Academy of AI (BAAI),0.0,0.0,0.05,0.45,0.125,0.15,36
+thudm,THUDM (Tsinghua),0.0,0.0,0.05,0.45,0.125,0.15,37
+ai_sweden,AI Sweden,0.0,0.0,0.05,0.45,0.125,0.15,38
+aisg,AI Singapore,0.0,0.0,0.05,0.45,0.125,0.15,39
+vinai,VinAI,0.0,0.0,0.05,0.45,0.125,0.15,40
+xai,xAI,0.1,0.0,0.15,0.25,0.125,0.175,41
+allegro,Allegro (PL),0.0,0.0,0.05,0.45,0.125,0.15,42
+spacy_es,BSC & UPV,0.0,0.0,0.05,0.45,0.125,0.15,43
+yandex,Yandex,0.0,0.0,0.05,0.45,0.125,0.15,44
+unicamp,NILC (USP/UNICAMP),0.0,0.0,0.05,0.45,0.125,0.15,45
+bigcode,BigCode (ServiceNow + HF),0.0,0.0,0.05,0.45,0.125,0.15,46
+sarvam,Sarvam AI,0.0,0.0,0.05,0.45,0.125,0.15,47
+qcri,Qatar Computing Research Institute (QCRI),0.0,0.0,0.05,0.45,0.125,0.15,48
+siloai,Silo AI,0.0,0.0,0.05,0.45,0.125,0.15,49
+huridocs_uwazi,HURIDOCS,0.0,0.0,0.25,0.2,0.1125,0.125,50
+salesforce,Salesforce,0.0,0.0,0.0,0.45,0.1125,0.15,51
+mosaicml,MosaicML (Databricks),0.0,0.0,0.0,0.45,0.1125,0.15,52
+drivendata_zamba,DrivenData,0.0,0.0,0.05,0.4,0.1125,0.125,53
+nomic,Nomic AI,0.0,0.0,0.0,0.45,0.1125,0.15,54
+ai2,Allen Institute for AI (AI2),0.0,0.0,0.0,0.4,0.1,0.125,55
+apple,Apple,0.0,0.0,0.05,0.35,0.09999999999999999,0.15,56
+suno,Suno,0.0,0.0,0.05,0.35,0.09999999999999999,0.15,57
+rinna,rinna,0.0,0.0,0.05,0.35,0.09999999999999999,0.15,58
+ai4d,AI4D Africa,0.0,0.0,0.05,0.35,0.09999999999999999,0.15,59
+deepseek,DeepSeek,0.0,0.0,0.05,0.35,0.09999999999999999,0.15,60
+coqui,Coqui AI,0.0,0.0,0.05,0.35,0.09999999999999999,0.15,61
+360,Qihoo 360,0.0,0.0,0.05,0.35,0.09999999999999999,0.15,62
+baichuan,Baichuan AI,0.0,0.0,0.05,0.35,0.09999999999999999,0.15,63
+iu_osome_botometer,Indiana University (OSoMe & IUNI),0.0,0.1,0.05,0.2,0.08750000000000001,0.1,64
+unicef_itu_giga_project_connect,UNICEF + ITU (Giga),0.0,0.0,0.15,0.2,0.0875,0.1,65
+microsoft_cosmos,Microsoft,0.0,0.0,0.0,0.35,0.0875,0.125,66
+lmsys,LMSYS (UC Berkeley),0.0,0.0,0.0,0.35,0.0875,0.15,67
+ukp,UKP Lab (TU Darmstadt),0.0,0.0,0.0,0.35,0.0875,0.125,68
+meta_sam,Meta,0.0,0.0,0.0,0.35,0.0875,0.125,69
+microsoft,Microsoft,0.0,0.0,0.0,0.35,0.0875,0.125,70
+princeton_nlp,Princeton/NVIDIA/UMD,0.0,0.0,0.0,0.35,0.0875,0.15,71
+snowflake,Snowflake,0.0,0.0,0.0,0.35,0.0875,0.125,72
+inria,INRIA/CNRS/Sorbonne,0.0,0.0,0.0,0.35,0.0875,0.125,73
+zhipuai,Zhipu AI,0.0,0.0,0.0,0.35,0.0875,0.125,74
+ai4bharat,AI4Bharat (IIT Madras),0.0,0.0,0.0,0.35,0.0875,0.125,75
+databricks,Databricks,0.0,0.0,0.0,0.35,0.0875,0.15,76
+syrian_archive,Mnemonic / Syrian Archive,0.0,0.0,0.2,0.1,0.07500000000000001,0.075,77
+flora_incognita,TU Ilmenau & Max Planck Institute (MPI-Jena),0.0,0.2,0.0,0.1,0.07500000000000001,0.075,78
+theoceancleanup_adis,The Ocean Cleanup,0.0,0.0,0.2,0.1,0.07500000000000001,0.075,79
+tii,Technology Innovation Institute (TII),0.0,0.0,0.0,0.3,0.075,0.125,80
+turkunlp,TurkuNLP (University of Turku),0.0,0.0,0.025,0.225,0.0625,0.075,81
+uio_nlp,University of Oslo NLP,0.0,0.0,0.025,0.225,0.0625,0.075,82
+minigpt4,KAUST Vision-CAIR,0.0,0.0,0.025,0.225,0.0625,0.075,83
+deeppavlov,DeepPavlov,0.0,0.0,0.025,0.225,0.0625,0.075,84
+tinyllama,TinyLlama,0.0,0.0,0.025,0.225,0.0625,0.075,85
+teknium,Teknium,0.0,0.0,0.025,0.225,0.0625,0.075,86
+stanford,Stanford CRFM,0.0,0.0,0.0,0.25,0.0625,0.125,87
+nvidia,NVIDIA,0.0,0.0,0.0,0.25,0.0625,0.125,88
+cerebras,Cerebras Systems,0.0,0.0,0.025,0.225,0.0625,0.075,89
+tencent,Tencent AI Lab,0.0,0.0,0.0,0.25,0.0625,0.125,90
+openorca,OpenOrca,0.0,0.0,0.025,0.225,0.0625,0.075,91
+meta_seamless,Meta,0.0,0.0,0.0,0.25,0.0625,0.125,92
+llava,LLaVA Team (Berkeley/UCLA/CMU),0.0,0.0,0.025,0.225,0.0625,0.075,93
+google_gemma,Google,0.0,0.0,0.0,0.25,0.0625,0.125,94
+abacus,Abacus.AI,0.0,0.0,0.025,0.225,0.0625,0.075,95
+idea_research,IDEA Research,0.0,0.0,0.025,0.225,0.0625,0.075,96
+helsinki_obotti,City of Helsinki,0.0,0.0,0.05,0.2,0.0625,0.075,97
+helsinki_nlp,Helsinki-NLP,0.0,0.0,0.025,0.225,0.0625,0.075,98
+lgai,LG AI Research,0.0,0.0,0.0,0.25,0.0625,0.125,99
+openflamingo,OpenFlamingo (LAION/AllenAI),0.0,0.0,0.025,0.225,0.0625,0.075,100
+grw_microsoft_planet_tnc,"Microsoft,Planet Labs,The Nature Conservancy",0.0,0.0,0.1,0.1,0.05,0.05,101
+baidu,Baidu,0.0,0.0,0.0,0.15,0.0375,0.125,102
+amazon,Amazon,0.0,0.0,0.0,0.15,0.0375,0.125,103
+google_imagen,Google,0.0,0.0,0.0,0.15,0.0375,0.125,104
+kyutai,Kyutai,0.0,0.0,0.0,0.125,0.03125,0.0625,105
+stability_audio,Stability AI,0.0,0.0,0.0,0.1,0.025,0.125,106
+perplexity,Perplexity,0.0,0.0,0.0,0.05,0.0125,0.1,107
+nvidia_riva,NVIDIA,0.0,0.0,0.0,0.05,0.0125,0.1,108
+armman_kilkari_ai,ARMMAN,0.0,0.0,0.0,0.0,0.0,0.0,109
+amsterdam_reporting_issues,City of Amsterdam,0.0,0.0,0.0,0.0,0.0,0.0,110
+synthesia,Synthesia,0.0,0.0,0.0,0.0,0.0,0.1,111
+sensetime,SenseTime,0.0,0.0,0.0,0.0,0.0,0.1,112
+alephalpha,Aleph Alpha,0.0,0.0,0.0,0.0,0.0,0.1,113
+inflection,Inflection AI,0.0,0.0,0.0,0.0,0.0,0.1,114
+together,Together AI,0.0,0.0,0.0,0.0,0.0,0.1,115
+tu_berlin_gca,Technische Universität Berlin,0.0,0.0,0.0,0.0,0.0,0.0,116
+sber,Sber AI,0.0,0.0,0.0,0.0,0.0,0.1,117
+ai2_wildlands,Allen Institute for AI (AI2),0.0,0.0,0.0,0.0,0.0,0.0,118
+ai2_skylight,Allen Institute for AI (AI2),0.0,0.0,0.0,0.0,0.0,0.0,119
+ai2_earthranger,Allen Institute for AI (AI2),0.0,0.0,0.0,0.0,0.0,0.0,120
+ai21,AI21 Labs,0.0,0.0,0.0,0.0,0.0,0.1,121
+usc_paws,USC Center for AI in Society (CAIS) / Harvard CRCS,0.0,0.0,0.0,0.0,0.0,0.0,122
+vframe,VFRAME.io,0.0,0.0,0.0,0.0,0.0,0.0,123
+adobe,Adobe,0.0,0.0,0.0,0.0,0.0,0.1,124
+voyage,Voyage AI,0.0,0.0,0.0,0.0,0.0,0.1,125
+adept,Adept AI,0.0,0.0,0.0,0.0,0.0,0.1,126
+sdaia,Saudi Data & AI Authority (SDAIA),0.0,0.0,0.0,0.0,0.0,0.1,127
+planblue,PlanBlue GmbH,0.0,0.0,0.0,0.0,0.0,0.0,128
+berlin_bobbi,City of Berlin (ITDZ Berlin & TU Berlin DAI-Lab),0.0,0.0,0.0,0.0,0.0,0.0,129
+citylab_berlin_qtrees,CityLAB Berlin (Technologiestiftung Berlin),0.0,0.0,0.0,0.0,0.0,0.0,130
+idmc_idetect,Internal Displacement Monitoring Centre (IDMC),0.0,0.0,0.0,0.0,0.0,0.0,131
+huawei,Huawei,0.0,0.0,0.0,0.0,0.0,0.1,132
+hamburg_frag_den_michel,City of Hamburg,0.0,0.0,0.0,0.0,0.0,0.0,133
+luma,Luma AI,0.0,0.0,0.0,0.0,0.0,0.1,134
+govii,Govii UG,0.0,0.0,0.0,0.0,0.0,0.0,135
+masakhane_ner,Masakhane,0.0,0.0,0.0,0.0,0.0,0.0,136
+genderly,Genderly team (Prototype Fund),0.0,0.0,0.0,0.0,0.0,0.0,137
+fullfact_ai,Full Fact,0.0,0.0,0.0,0.0,0.0,0.0,138
+estonia_euif_ott,Estonian Unemployment Insurance Fund (EUIF),0.0,0.0,0.0,0.0,0.0,0.0,139
+midjourney,Midjourney,0.0,0.0,0.0,0.0,0.0,0.1,140
+elevenlabs,ElevenLabs,0.0,0.0,0.0,0.0,0.0,0.1,141
+deepL,DeepL,0.0,0.0,0.0,0.0,0.0,0.1,142
+naver,Naver,0.0,0.0,0.0,0.0,0.0,0.1,143
+cloudflare_ai,Cloudflare,0.0,0.0,0.0,0.0,0.0,0.1,144
+cirrolytix_aedes,CirroLytix Research Services,0.0,0.0,0.0,0.0,0.0,0.0,145
+sap,SAP,0.0,0.0,0.0,0.0,0.0,0.05,146
+charamel_avasag,Charamel GmbH,0.0,0.0,0.0,0.0,0.0,0.0,147
+characterai,Character.AI,0.0,0.0,0.0,0.0,0.0,0.1,148
+calpoly_iatpp_ai_for_reporters,Cal Poly Institute for Advanced Technology and Public Policy (IATPP),0.0,0.0,0.0,0.0,0.0,0.0,149
+pika,Pika Labs,0.0,0.0,0.0,0.0,0.0,0.1,150
+bytedance,ByteDance,0.0,0.0,0.0,0.0,0.0,0.1,151
+iflytek,iFLYTEK,0.0,0.0,0.0,0.0,0.0,0.1,152
+plantix,PEAT GmbH,0.0,0.0,0.0,0.0,0.0,0.0,153
+botalite_factalite,Botalite,0.0,0.0,0.0,0.0,0.0,0.0,154
+boston_yelp_health_risk,DrivenData + City of Boston + Yelp + Harvard,0.0,0.0,0.0,0.0,0.0,0.0,155
+rainforest_connection_arbimon,Rainforest Connection (RFCx),0.0,0.0,0.0,0.0,0.0,0.0,156
+reka,Reka AI,0.0,0.0,0.0,0.0,0.0,0.1,157
+bloomberg,Bloomberg,0.0,0.0,0.0,0.0,0.0,0.1,158
+runway,Runway,0.0,0.0,0.0,0.0,0.0,0.1,159
+birdvision,BirdVision GmbH & Co. KG,0.0,0.0,0.0,0.0,0.0,0.0,160
+krutrim,Krutrim (Ola),0.0,0.0,0.0,0.0,0.0,0.1,161

@@ -1,0 +1,76 @@
+:root{
+  --bg: #0b0f14;
+  --panel: #10161f;
+  --text: #e5e9f0;
+  --muted: #a7b1c2;
+  --accent: #4f46e5;
+  --border: #1f2a37;
+  --good: #16a34a;
+  --warn: #f59e0b;
+}
+*{box-sizing:border-box}
+html,body{padding:0;margin:0}
+body{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+  background: var(--bg);
+  color: var(--text);
+}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+.header{
+  display:flex; gap:16px; align-items:center; justify-content:space-between; margin-bottom:24px;
+}
+.brand{font-weight:700; font-size:24px; letter-spacing:0.2px}
+.nav{display:flex; gap:12px}
+.nav a{padding:6px 10px; border-radius:8px; color:var(--text)}
+.nav a[aria-current="page"]{background:var(--panel); border:1px solid var(--border)}
+.panel{
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+.controls{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-bottom:12px}
+input[type="search"]{
+  background:#0d1220; color:var(--text); border:1px solid var(--border);
+  border-radius:10px; padding:10px 12px; min-width:220px;
+}
+select{
+  background:#0d1220; color:var(--text); border:1px solid var(--border);
+  border-radius:10px; padding:10px 12px;
+}
+.table-wrap{overflow:auto; border-radius:10px; border:1px solid var(--border)}
+table{width:100%; border-collapse:collapse; min-width:720px}
+th, td{padding:10px 12px}
+thead th{
+  position:sticky; top:0; background:#0d1220; z-index:1;
+  text-align:left; font-weight:600; font-size:13px; border-bottom:1px solid var(--border);
+}
+tbody tr{border-bottom:1px solid var(--border)}
+tbody tr:hover{background:rgba(255,255,255,0.02)}
+td.num, th.num{text-align:right}
+.badge{
+  display:inline-block; font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid var(--border); background:#0d1220; color:var(--muted);
+}
+.progress{
+  height:8px; background:#0d1220; border:1px solid var(--border); border-radius:999px; overflow:hidden
+}
+.progress > span{display:block; height:100%; background:linear-gradient(90deg, var(--accent), #22c55e)}
+.meta{color:var(--muted); font-size:12px}
+footer{margin-top:48px; font-size:12px; color:var(--muted)}
+.skeleton{
+  background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.12) 37%, rgba(255,255,255,0.05) 63%);
+  background-size: 400% 100%;
+  animation: shine 1.4s ease infinite;
+  border-radius:8px; height:1em
+}
+@keyframes shine { 0%{background-position: 200% 0} 100%{background-position: -200% 0} }
+@media (max-width: 640px){
+  .brand{font-size:18px}
+  .container{padding:16px}
+}

@@ -29,31 +29,31 @@ export default function ProviderDetail({ params }: any) {
         setRows(rows);
 
         const lines = csv.split(/\r?\n/).filter(Boolean);
-        if (lines.length > 1) {
-          // robust split that respects quotes and escaped quotes
-          function splitCSV(line: string): string[] {
-            const out: string[] = [];
-            let cur = ''; let inQuotes = false;
-            for (let i=0; i<line.length; i++) {
-              const ch = line[i];
-              if (ch === '"') {
-                if (inQuotes && line[i+1] === '"') { cur += '"'; i++; }
-                else { inQuotes = !inQuotes; }
-              } else if (ch === ',' && !inQuotes) {
-                out.push(cur); cur = '';
-              } else {
-                cur += ch;
-              }
+        const splitCSV = (line: string): string[] => {
+          const out: string[] = [];
+          let cur = '';
+          let inQuotes = false;
+          for (let i = 0; i < line.length; i++) {
+            const ch = line[i];
+            if (ch === '"') {
+              if (inQuotes && line[i + 1] === '"') { cur += '"'; i++; }
+              else { inQuotes = !inQuotes; }
+            } else if (ch === ',' && !inQuotes) {
+              out.push(cur); cur = '';
+            } else {
+              cur += ch;
             }
-            out.push(cur);
-            return out.map(s => s.trim());
           }
+          out.push(cur);
+          return out.map(s => s.trim());
+        };
 
+        if (lines.length > 1) {
           const head = splitCSV(lines[0]);
           const details: Detail[] = lines.slice(1).map((ln) => {
             const cols = splitCSV(ln);
             const obj: any = {};
-            head.forEach((h, i) => obj[h] = cols[i]);
+            head.forEach((h, i) => (obj[h] = cols[i]));
             return {
               provider_id: obj.provider_id,
               provider_name: obj.provider_name,

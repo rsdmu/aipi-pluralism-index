@@ -22,6 +22,11 @@ export default function HomePage() {
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState<string|undefined>();
 
+  // ✅ put the helper INSIDE the component so it can see sortKey/sortDir
+  type AriaSort = 'none'|'ascending'|'descending'|'other';
+  const ariaSortFor = (k: SortKey): AriaSort =>
+    sortKey !== k ? 'none' : (sortDir === 'asc' ? 'ascending' : 'descending');
+
   useEffect(() => {
     let cancelled = false;
     async function load() {
@@ -107,11 +112,11 @@ export default function HomePage() {
             <table>
               <thead>
                 <tr>
-                  <th onClick={()=>onHeaderClick('rank')} role="button" aria-sort={sortKey==='rank'?sortDir:'none'}>#</th>
-                  <th onClick={()=>onHeaderClick('provider_name')} role="button" aria-sort={sortKey==='provider_name'?sortDir:'none'}>Provider</th>
+                  <th onClick={()=>onHeaderClick('rank')} role="button" aria-sort={ariaSortFor('rank')}>#</th>
+                  <th onClick={()=>onHeaderClick('provider_name')} role="button" aria-sort={ariaSortFor('provider_name')}>Provider</th>
                   {pillars.map(p => <th key={p} className="num">{p}</th>)}
-                  <th onClick={()=>onHeaderClick('AIPI')} role="button" className="num" aria-sort={sortKey==='AIPI'?sortDir:'none'}>AIPI</th>
-                  <th onClick={()=>onHeaderClick('coverage')} role="button" className="num" aria-sort={sortKey==='coverage'?sortDir:'none'}>Coverage</th>
+                  <th onClick={()=>onHeaderClick('AIPI')} role="button" className="num" aria-sort={ariaSortFor('AIPI')}>AIPI</th>
+                  <th onClick={()=>onHeaderClick('coverage')} role="button" className="num" aria-sort={ariaSortFor('coverage')}>Coverage</th>
                 </tr>
               </thead>
               <tbody>

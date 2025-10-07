@@ -22,20 +22,38 @@ export default function ProviderDetail({ params }: any) {
         const [meta, rows, csv] = await Promise.all([
           fetch(process.env.NEXT_PUBLIC_AIPI_META_URL || '/data/meta.json').then(r=>r.json()),
           fetch(process.env.NEXT_PUBLIC_AIPI_DATA_URL || '/data/providers.json').then(r=>r.json()),
-          fetch('/data/scores_by_indicator.csv').then(r=>r.text()).catch(()=>''),
+          fetch('/data/scores_by_indicator.csv').then(r=>r.text()).catch(()=>''), // local fallback
         ]);
         if (cancelled) return;
         setMeta(meta);
         setRows(rows);
-        // Parse a minimal CSV subset if available (assumes header row)
+
         const lines = csv.split(/\r?\n/).filter(Boolean);
         if (lines.length > 1) {
-          const head = lines[0].split(',');
-          const get = (o:any,k:string)=>o[head.indexOf(k)];
-          const details: Detail[] = lines.slice(1).map((ln)=>{
-            const cols = ln.split(',');
-            const obj:any = {};
-            head.forEach((h,i)=>obj[h]=cols[i]);
+          // robust split that respects quotes and escaped quotes
+          function splitCSV(line: string): string[] {
+            const out: string[] = [];
+            let cur = ''; let inQuotes = false;
+            for (let i=0; i<line.length; i++) {
+              const ch = line[i];
+              if (ch === '"') {
+                if (inQuotes && line[i+1] === '"') { cur += '"'; i++; }
+                else { inQuotes = !inQuotes; }
+              } else if (ch === ',' && !inQuotes) {
+                out.push(cur); cur = '';
+              } else {
+                cur += ch;
+              }
+            }
+            out.push(cur);
+            return out.map(s => s.trim());
+          }
+
+          const head = splitCSV(lines[0]);
+          const details: Detail[] = lines.slice(1).map((ln) => {
+            const cols = splitCSV(ln);
+            const obj: any = {};
+            head.forEach((h, i) => obj[h] = cols[i]);
             return {
               provider_id: obj.provider_id,
               provider_name: obj.provider_name,
@@ -81,62 +99,67 @@ export default function ProviderDetail({ params }: any) {
     maintainAspectRatio: false
   };
 
+  if (loading) {
+    return (
+      <main id="main">
+        <section className="panel" aria-labelledby="prov-h">
+          <div style={{display:'grid', gap:16}}>
+            <div className="skeleton" style={{width:'60%', height:28}} />
+            <div className="skeleton" style={{width:'100%', height:280}} />
+            <div className="skeleton" style={{width:'100%', height:200}} />
+          </div>
+        </section>
+      </main>
+    );
+  }
+
+  if (err) return <main><section className="panel"><p className="meta">{err}</p></section></main>;
+  if (!provider) return <main><section className="panel"><p className="meta">Provider not found.</p></section></main>;
+
   return (
     <main id="main">
       <section className="panel" aria-labelledby="prov-h">
         <div className="controls" style={{marginBottom:0}}>
           <a href="/aipi/providers" className="badge" aria-label="Back to providers">← Back</a>
           <div style={{flex:1}} />
-          {provider ? <span className="badge">Rank {provider.rank}</span> : null}
+          <span className="badge">Rank {provider.rank}</span>
         </div>
-        {loading ? (
-          <div style={{display:'grid', gap:16}}>
-            <div className="skeleton" style={{width:'60%', height:28}} />
-            <div className="skeleton" style={{width:'100%', height:280}} />
-            <div className="skeleton" style={{width:'100%', height:200}} />
-          </div>
-        ) : err ? (
-          <p className="meta">{err}</p>
-        ) : !provider ? (
-          <p className="meta">Provider not found.</p>
-        ) : (
-          <>
-            <h1 style={{margin:'8px 0 8px'}}>{provider.provider_name}</h1>
-            <p className="meta">AIPI {(provider.AIPI).toFixed(3)} • Coverage {(provider.coverage*100).toFixed(0)}%</p>
-            <div className="panel" style={{padding:0, marginTop:12}}>
-              <div style={{height:340, padding:16}}>
-                <Radar data={data as any} options={options} />
-              </div>
-            </div>
 
-            <h2 style={{marginTop:24}}>Indicators</h2>
-            <div className="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Pillar</th>
-                    <th>Indicator</th>
-                    <th className="num">Value</th>
-                    <th className="num">Evidence (norm.)</th>
-                    <th>Source</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {indicators.map((d, i) => (
-                    <tr key={i}>
-                      <td>{d.pillar}</td>
-                      <td>{d.indicator_name}</td>
-                      <td className="num">{(d.indicator_value ?? 0).toFixed(2)}</td>
-                      <td className="num">{(d.norm_evidence ?? 0).toFixed(2)}</td>
-                      <td>{d.evidence_url ? <a href={d.evidence_url} target="_blank" rel="noreferrer">source</a> : '—'}</td>
-                    </tr>
-                  ))}
-                  {!indicators.length ? <tr><td colSpan={5} className="meta">No indicator-level rows for this provider.</td></tr> : null}
-                </tbody>
-              </table>
-            </div>
-          </>
-        )}
+        <h1 style={{margin:'8px 0 8px'}}>{provider.provider_name}</h1>
+        <p className="meta">AIPI {(provider.AIPI).toFixed(3)} • Coverage {(provider.coverage*100).toFixed(0)}%</p>
+
+        <div className="panel" style={{padding:0, marginTop:12}}>
+          <div style={{height:340, padding:16}}>
+            <Radar data={data as any} options={options} />
+          </div>
+        </div>
+
+        <h2 style={{marginTop:24}}>Indicators</h2>
+        <div className="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Pillar</th>
+                <th>Indicator</th>
+                <th className="num">Value</th>
+                <th className="num">Evidence (norm.)</th>
+                <th>Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              {indicators.map((d, i) => (
+                <tr key={i}>
+                  <td>{d.pillar}</td>
+                  <td>{d.indicator_name}</td>
+                  <td className="num">{(d.indicator_value ?? 0).toFixed(2)}</td>
+                  <td className="num">{(d.norm_evidence ?? 0).toFixed(2)}</td>
+                  <td>{d.evidence_url ? <a href={d.evidence_url} target="_blank" rel="noreferrer">source</a> : '—'}</td>
+                </tr>
+              ))}
+              {!indicators.length ? <tr><td colSpan={5} className="meta">No indicator-level rows for this provider.</td></tr> : null}
+            </tbody>
+          </table>
+        </div>
       </section>
     </main>
   );

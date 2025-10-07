@@ -53,14 +53,14 @@ See `docs/MEASUREMENT.md` and `docs/REPRODUCIBILITY.md` for details.
 
 ## Citation
 
-""
+```bash
 @misc{mushkani2025aipi,
       title={Measuring What Matters: The AI Pluralism Index}, 
       author={Rashid Mushkani},
       year={2025},
       url={https://arxiv.org/abs/2509.14574}, 
 }
-""
+```
 See `paper/aipi.tex` for the paper front matter.
 
 

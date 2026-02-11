@@ -1,0 +1,46 @@
+name: Evidence Update
+description: Add or update evidence for an indicator
+title: "[Evidence]: "
+labels:
+  - data
+body:
+  - type: input
+    id: provider_system
+    attributes:
+      label: Provider/System
+      placeholder: e.g., OpenAI GPT-4.1
+    validations:
+      required: true
+
+  - type: input
+    id: indicator_id
+    attributes:
+      label: Indicator ID
+      placeholder: e.g., TRN-001
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence_urls
+    attributes:
+      label: New evidence URL(s)
+      description: Add one URL per line.
+      placeholder: |
+        https://...
+        https://...
+    validations:
+      required: true
+
+  - type: textarea
+    id: excerpts
+    attributes:
+      label: Excerpt(s)
+      description: Quote the exact relevant text from the source.
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Any context, caveats, or follow-up items.

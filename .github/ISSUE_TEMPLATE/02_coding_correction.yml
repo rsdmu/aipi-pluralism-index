@@ -1,0 +1,46 @@
+name: Coding Correction
+description: Propose a correction to an indicator value
+title: "[Correction]: "
+labels:
+  - data
+  - bug
+body:
+  - type: input
+    id: provider_system
+    attributes:
+      label: Provider/System
+      placeholder: e.g., Anthropic Claude
+    validations:
+      required: true
+
+  - type: input
+    id: indicator_id
+    attributes:
+      label: Indicator ID
+      placeholder: e.g., GOV-014
+    validations:
+      required: true
+
+  - type: input
+    id: current_value
+    attributes:
+      label: Current value
+      placeholder: e.g., 0.25
+    validations:
+      required: true
+
+  - type: input
+    id: proposed_value
+    attributes:
+      label: Proposed value
+      placeholder: e.g., 0.75
+    validations:
+      required: true
+
+  - type: textarea
+    id: justification
+    attributes:
+      label: Justification
+      description: Include evidence and reasoning for the correction.
+    validations:
+      required: true

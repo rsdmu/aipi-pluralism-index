@@ -2,7 +2,8 @@
 ---
 name: Methodology Proposal
 about: Suggest a change to scoring or normalization
-labels: methodology
+title: "[Methodology] "
+labels: ["methodology"]
 ---
 **Summary**:
 

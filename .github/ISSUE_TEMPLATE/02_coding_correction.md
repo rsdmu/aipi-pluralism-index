@@ -2,7 +2,8 @@
 ---
 name: Coding Correction
 about: Propose a correction to an indicator value
-labels: data, bug
+title: "[Correction] "
+labels: ["data", "bug"]
 ---
 **Provider/System**:
 

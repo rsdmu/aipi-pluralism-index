@@ -2,7 +2,8 @@
 ---
 name: Evidence Update
 about: Add or update evidence for an indicator
-labels: data
+title: "[Evidence] "
+labels: ["data"]
 ---
 **Provider/System**:
 

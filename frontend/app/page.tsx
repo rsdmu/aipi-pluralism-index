@@ -1,143 +1,263 @@
 'use client';
+
+import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 
 type Provider = {
   provider_id: string;
   provider_name: string;
   AIPI: number;
-  rank: number;
   coverage: number;
-  [key: string]: any;
+  [k: string]: string | number;
 };
 
-type SortKey = 'rank'|'provider_name'|'AIPI'|'coverage'|string;
-type SortDir = 'asc'|'desc';
+type SortKey = 'aipi' | 'coverage' | 'name';
+
+const PILLAR_ORDER = [
+  'Participatory governance',
+  'Inclusivity & diversity',
+  'Transparency',
+  'Accountability',
+];
+
+function normalizePillarName(pillar: string): string {
+  const p = pillar.trim().toLowerCase();
+  if (p === 'inclusivity and diversity' || p === 'inclusivity & diversity') return 'Inclusivity & diversity';
+  if (p === 'participatory governance') return 'Participatory governance';
+  if (p === 'accountability') return 'Accountability';
+  if (p === 'transparency') return 'Transparency';
+  return pillar;
+}
+
+function getPillarValue(row: Provider, pillar: string): number {
+  const normalized = normalizePillarName(pillar);
+  const keys = Object.keys(row);
+  for (const key of keys) {
+    if (normalizePillarName(key) === normalized) return Number(row[key] ?? 0);
+  }
+  return 0;
+}
+
+function parseCsvLine(line: string): string[] {
+  const out: string[] = [];
+  let cur = '';
+  let inQuotes = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (ch === '"') {
+      if (inQuotes && line[i + 1] === '"') {
+        cur += '"';
+        i++;
+      } else {
+        inQuotes = !inQuotes;
+      }
+    } else if (ch === ',' && !inQuotes) {
+      out.push(cur);
+      cur = '';
+    } else {
+      cur += ch;
+    }
+  }
+  out.push(cur);
+  return out.map((s) => s.trim());
+}
+
+function toNumber(v: string | undefined): number | undefined {
+  if (v === undefined || v === '') return undefined;
+  const n = Number(v);
+  return Number.isFinite(n) ? n : undefined;
+}
+
+function deriveRowsFromScores(csv: string): Provider[] {
+  const lines = csv.split(/\r?\n/).filter(Boolean);
+  if (lines.length <= 1) return [];
+
+  const header = parseCsvLine(lines[0]);
+  const idx = (name: string) => header.indexOf(name);
+  const providerIdIdx = idx('provider_id');
+  const providerNameIdx = idx('provider_name');
+  const pillarIdx = idx('pillar');
+  const normKnownIdx = idx('norm_known');
+  const normEvidenceIdx = idx('norm_evidence');
+
+  type Bucket = {
+    provider_id: string;
+    provider_name: string;
+    knownCount: number;
+    totalCount: number;
+    pillarEvidenceSum: Record<string, number>;
+    pillarEvidenceCount: Record<string, number>;
+  };
+
+  const map = new Map<string, Bucket>();
+
+  for (const line of lines.slice(1)) {
+    const cols = parseCsvLine(line);
+    const provider_id = cols[providerIdIdx];
+    const provider_name = cols[providerNameIdx];
+    const pillar = normalizePillarName(cols[pillarIdx] || '');
+    if (!provider_id || !provider_name || !PILLAR_ORDER.includes(pillar)) continue;
+
+    const normKnown = toNumber(cols[normKnownIdx]);
+    const normEvidence = toNumber(cols[normEvidenceIdx]) ?? 0;
+
+    if (!map.has(provider_id)) {
+      map.set(provider_id, {
+        provider_id,
+        provider_name,
+        knownCount: 0,
+        totalCount: 0,
+        pillarEvidenceSum: Object.fromEntries(PILLAR_ORDER.map((p) => [p, 0])),
+        pillarEvidenceCount: Object.fromEntries(PILLAR_ORDER.map((p) => [p, 0])),
+      });
+    }
+
+    const bucket = map.get(provider_id)!;
+    bucket.totalCount += 1;
+    bucket.pillarEvidenceSum[pillar] += normEvidence;
+    bucket.pillarEvidenceCount[pillar] += 1;
+    if (normKnown !== undefined) bucket.knownCount += 1;
+  }
+
+  const rows: Provider[] = [];
+
+  map.forEach((bucket) => {
+    const row: Provider = {
+      provider_id: bucket.provider_id,
+      provider_name: bucket.provider_name,
+      AIPI: 0,
+      coverage: bucket.totalCount ? bucket.knownCount / bucket.totalCount : 0,
+    };
+    let aipi = 0;
+    for (const pillar of PILLAR_ORDER) {
+      const val = bucket.pillarEvidenceCount[pillar]
+        ? bucket.pillarEvidenceSum[pillar] / bucket.pillarEvidenceCount[pillar]
+        : 0;
+      row[pillar] = val;
+      aipi += val;
+    }
+    row.AIPI = aipi / PILLAR_ORDER.length;
+    rows.push(row);
+  });
+
+  return rows;
+}
 
 export default function HomePage() {
   const [rows, setRows] = useState<Provider[]>([]);
-  const [pillars, setPillars] = useState<string[]>([]);
-  const [q, setQ] = useState('');
-  const [sortKey, setSortKey] = useState<SortKey>('rank');
-  const [sortDir, setSortDir] = useState<SortDir>('asc');
+  const [sortKey, setSortKey] = useState<SortKey>('aipi');
+  const [topOnly, setTopOnly] = useState(true);
   const [loading, setLoading] = useState(true);
-  const [err, setErr] = useState<string|undefined>();
-
-  // ✅ put the helper INSIDE the component so it can see sortKey/sortDir
-  type AriaSort = 'none'|'ascending'|'descending'|'other';
-  const ariaSortFor = (k: SortKey): AriaSort =>
-    sortKey !== k ? 'none' : (sortDir === 'asc' ? 'ascending' : 'descending');
 
   useEffect(() => {
     let cancelled = false;
     async function load() {
       try {
-        const meta = await fetch(process.env.NEXT_PUBLIC_AIPI_META_URL || '/data/meta.json').then(r=>r.json());
-        const data = await fetch(process.env.NEXT_PUBLIC_AIPI_DATA_URL || '/data/providers.json').then(r=>r.json());
+        const csv = await fetch('/data/scores_by_indicator.csv').then((r) => r.text());
         if (!cancelled) {
-          setPillars(meta.pillars || []);
-          setRows(Array.isArray(data) ? data : []);
+          setRows(deriveRowsFromScores(csv));
         }
-      } catch (e:any) {
-        console.error(e);
-        if (!cancelled) setErr('Failed to load data.');
+      } catch {
+        if (!cancelled) {
+          setRows([]);
+        }
       } finally {
         if (!cancelled) setLoading(false);
       }
     }
     load();
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
-  const filtered = useMemo(() => {
-    const needle = q.trim().toLowerCase();
-    const r = rows.filter(r =>
-      !needle ||
-      r.provider_name.toLowerCase().includes(needle) ||
-      r.provider_id.toLowerCase().includes(needle)
-    );
-    const sorted = [...r].sort((a,b)=>{
-      const va = (a as any)[sortKey] ?? 0;
-      const vb = (b as any)[sortKey] ?? 0;
-      if (typeof va === 'string' || typeof vb === 'string') {
-        return (''+va).localeCompare(''+vb) * (sortDir==='asc'?1:-1);
-      }
-      return (va - vb) * (sortDir==='asc'?1:-1);
-    });
-    return sorted;
-  }, [rows, q, sortKey, sortDir]);
+  const sortedRows = useMemo(() => {
+    const out = [...rows];
+    if (sortKey === 'aipi') out.sort((a, b) => (b.AIPI ?? 0) - (a.AIPI ?? 0));
+    if (sortKey === 'coverage') out.sort((a, b) => (b.coverage ?? 0) - (a.coverage ?? 0));
+    if (sortKey === 'name') out.sort((a, b) => a.provider_name.localeCompare(b.provider_name));
+    return out;
+  }, [rows, sortKey]);
 
-  function onHeaderClick(k: SortKey){
-    if (sortKey === k) setSortDir(d => d==='asc'?'desc':'asc');
-    else { setSortKey(k); setSortDir(k==='provider_name'?'asc':'asc'); }
-  }
+  const shownRows = topOnly ? sortedRows.slice(0, 10) : sortedRows;
 
   return (
-    <main id="main">
-      <section className="panel" aria-labelledby="providers-h">
-        <div className="controls">
-          <h2 id="providers-h" style={{margin:'0 8px 0 0'}}>Providers</h2>
-          <input type="search" placeholder="Search providers…" value={q} onChange={e=>setQ(e.target.value)} aria-label="Search providers"/>
-          <div style={{flex:1}} />
-          <label className="meta">Sort&nbsp;
-            <select value={sortKey+':'+sortDir} onChange={e=>{
-              const [k,d] = e.target.value.split(':');
-              setSortKey(k as SortKey); setSortDir(d as SortDir);
-            }} aria-label="Sort order">
-              <option value={'rank:asc'}>Rank ↑</option>
-              <option value={'rank:desc'}>Rank ↓</option>
-              <option value={'provider_name:asc'}>Name A→Z</option>
-              <option value={'provider_name:desc'}>Name Z→A</option>
-              <option value={'AIPI:desc'}>AIPI ↓</option>
-              <option value={'AIPI:asc'}>AIPI ↑</option>
-              <option value={'coverage:desc'}>Coverage ↓</option>
-              <option value={'coverage:asc'}>Coverage ↑</option>
-            </select>
-          </label>
+    <main id="main" className="page">
+      <section className="overview-section" aria-labelledby="overview-h">
+        <h1 id="overview-h" className="sr-only">AI Pluralism Index overview</h1>
+        <p className="overview-one-line">
+          Measures whether stakeholders can shape AI objectives, data practices, safeguards, and deployment.
+        </p>
+        <div className="overview-link-row">
+          <Link href="/how-scoring-works" className="minimal-link">How scoring works</Link>
+        </div>
+      </section>
+
+      <section id="provider-results" className="overview-section" aria-labelledby="results-h">
+        <div className="ov-results-head">
+          <h2 id="results-h" className="section-title">Provider results</h2>
+          <div className="ov-results-controls">
+            <label className="meta">
+              Sort
+              <select value={sortKey} onChange={(e) => setSortKey(e.target.value as SortKey)} aria-label="Sort providers">
+                <option value="aipi">AIPI</option>
+                <option value="coverage">Coverage</option>
+                <option value="name">Name</option>
+              </select>
+            </label>
+            <div className="ov-toggle" role="group" aria-label="Result range">
+              <button type="button" onClick={() => setTopOnly(true)} className={!topOnly ? 'ghost' : ''}>Top 10</button>
+              <button type="button" onClick={() => setTopOnly(false)} className={topOnly ? 'ghost' : ''}>All</button>
+            </div>
+          </div>
         </div>
 
-        {loading ? (
-          <div className="table-wrap" role="region" aria-live="polite">
-            <table><thead><tr>
-              <th>#</th><th>Provider</th><th className="num">AIPI</th><th className="num">Coverage</th>
-            </tr></thead><tbody>
-              {Array.from({length:8}).map((_,i)=>(
-                <tr key={i}><td><span className="skeleton" style={{width:24,display:'block'}}/></td><td><span className="skeleton" style={{width:180,display:'block'}}/></td><td className="num"><span className="skeleton" style={{width:60,display:'inline-block'}}/></td><td className="num"><span className="skeleton" style={{width:60,display:'inline-block'}}/></td></tr>
-              ))}
-            </tbody></table>
+        <div className="ov-legend" aria-label="Pillar colors">
+          {PILLAR_ORDER.map((pillar, idx) => (
+            <span key={pillar} className="ov-legend-item">
+              <span className={`ov-dot ov-dot-${idx + 1}`} aria-hidden="true" />
+              {pillar}
+            </span>
+          ))}
+          <span className="ov-legend-item">
+            <span className="ov-coverage-key" aria-hidden="true" />
+            Coverage <abbr className="term-help" title="Coverage = share of indicators with evidence.">?</abbr>
+          </span>
+        </div>
+
+        <div className="ov-results-scroll">
+          <div className="ov-results-chart" role="img" aria-label="Stacked bars show pillar contributions to AIPI with a separate coverage bar for each provider.">
+            {loading ? (
+              <p className="meta">Loading provider results…</p>
+            ) : (
+              shownRows.map((row) => (
+                <article className="ov-result-row" key={row.provider_id}>
+                  <div className="ov-row-head">
+                    <span>{row.provider_name}</span>
+                    <span className="metric-num">{row.AIPI.toFixed(3)}</span>
+                  </div>
+                  <div className="ov-aipi-track" aria-label={`${row.provider_name} AIPI ${row.AIPI.toFixed(3)}`}>
+                    {PILLAR_ORDER.map((pillar, idx) => {
+                      const pillarValue = Math.max(0, Math.min(1, getPillarValue(row, pillar)));
+                      const contributionPct = (pillarValue / 4) * 100;
+                      return (
+                        <span
+                          key={`${row.provider_id}-${pillar}`}
+                          className={`ov-segment ov-segment-${idx + 1}`}
+                          style={{ width: `${contributionPct}%` }}
+                          title={`${pillar}: ${pillarValue.toFixed(2)}`}
+                        />
+                      );
+                    })}
+                  </div>
+                  <div className="ov-coverage-track" aria-label={`${row.provider_name} coverage ${Math.round(row.coverage * 100)}%`}>
+                    <span style={{ width: `${Math.max(0, Math.min(100, Math.round((row.coverage ?? 0) * 100)))}%` }} />
+                  </div>
+                </article>
+              ))
+            )}
           </div>
-        ) : err ? (
-          <p className="meta">{err}</p>
-        ) : (
-          <div className="table-wrap" role="region" aria-labelledby="providers-h">
-            <table>
-              <thead>
-                <tr>
-                  <th onClick={()=>onHeaderClick('rank')} role="button" aria-sort={ariaSortFor('rank')}>#</th>
-                  <th onClick={()=>onHeaderClick('provider_name')} role="button" aria-sort={ariaSortFor('provider_name')}>Provider</th>
-                  {pillars.map(p => <th key={p} className="num">{p}</th>)}
-                  <th onClick={()=>onHeaderClick('AIPI')} role="button" className="num" aria-sort={ariaSortFor('AIPI')}>AIPI</th>
-                  <th onClick={()=>onHeaderClick('coverage')} role="button" className="num" aria-sort={ariaSortFor('coverage')}>Coverage</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filtered.map(r => (
-                  <tr key={r.provider_id}>
-                    <td>{r.rank}</td>
-                    <td><a href={`/aipi/provider/${encodeURIComponent(r.provider_id)}`}>{r.provider_name}</a></td>
-                    {pillars.map(p => <td key={p} className="num">{((r as any)[p] ?? 0).toFixed(2)}</td>)}
-                    <td className="num" style={{fontWeight:700}}>{(r.AIPI).toFixed(3)}</td>
-                    <td className="num">
-                      <div className="progress" aria-label={`Coverage ${(r.coverage*100).toFixed(0)}%`}>
-                        <span style={{width: Math.max(0, Math.min(100, Math.round((r.coverage||0)*100))) + '%'}}/>
-                      </div>
-                      <span className="meta">{(r.coverage*100).toFixed(0)}%</span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )}
+        </div>
       </section>
     </main>
   );

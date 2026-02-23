@@ -29,9 +29,29 @@ a:hover{text-decoration:underline}
   display:flex; gap:16px; align-items:center; justify-content:space-between; margin-bottom:24px;
 }
 .brand{font-weight:700; font-size:24px; letter-spacing:0.2px}
+.header-actions{display:flex; align-items:center; gap:12px}
 .nav{display:flex; gap:12px}
 .nav a{padding:6px 10px; border-radius:8px; color:var(--text)}
 .nav a[aria-current="page"]{background:var(--panel); border:1px solid var(--border)}
+.contribute-cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid rgba(0, 191, 255, 0.55);
+  background:linear-gradient(180deg, rgba(0, 191, 255, 0.2), rgba(0, 191, 255, 0.06));
+  color:#eaf8ff;
+  font-weight:600;
+  letter-spacing:0.2px;
+  transition:transform .15s ease, border-color .15s ease, background .15s ease;
+}
+.contribute-cta:hover{
+  text-decoration:none;
+  transform:translateY(-1px);
+  border-color:rgba(0, 191, 255, 0.9);
+  background:linear-gradient(180deg, rgba(0, 191, 255, 0.3), rgba(0, 191, 255, 0.1));
+}
 .panel{
   background: var(--panel);
   border: 1px solid var(--border);
@@ -74,6 +94,8 @@ footer{margin-top:48px; font-size:12px; color:var(--muted)}
 }
 @keyframes shine { 0%{background-position: 200% 0} 100%{background-position: -200% 0} }
 @media (max-width: 640px){
+  .header{align-items:flex-start; flex-direction:column}
+  .header-actions{width:100%; justify-content:space-between}
   .brand{font-size:18px}
   .container{padding:16px}
 }

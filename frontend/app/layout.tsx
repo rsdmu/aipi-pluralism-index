@@ -27,10 +27,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <span className="brand">AI Pluralism Index</span>
               <span className="meta">AIPI</span>
             </div>
-            <nav className="nav" aria-label="Main">
-              <a href="/" aria-current="page">Overview</a>
-              <a href="/aipi/providers">Providers</a>
-            </nav>
+            <div className="header-actions">
+              <nav className="nav" aria-label="Main">
+                <a href="/" aria-current="page">Overview</a>
+                <a href="/aipi/providers">Providers</a>
+              </nav>
+              <a
+                className="contribute-cta"
+                href="https://github.com/rsdmu/aipi-pluralism-index"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Contribute
+              </a>
+            </div>
           </header>
           {children}
           <footer>

@@ -298,6 +298,13 @@ export default function ProviderDetail({ params }: { params: { id: string } }) {
     return unique;
   }, [indicators]);
 
+  const improvementSummary = useMemo(() => {
+    if (!improvementItems.length) return '';
+    if (improvementItems.length === 1) return improvementItems[0];
+    if (improvementItems.length === 2) return `${improvementItems[0]} and ${improvementItems[1]}`;
+    return `${improvementItems.slice(0, -1).join(', ')}, and ${improvementItems[improvementItems.length - 1]}`;
+  }, [improvementItems]);
+
   const radarData = useMemo(
     () => ({
       labels: PILLARS,
@@ -489,16 +496,10 @@ export default function ProviderDetail({ params }: { params: { id: string } }) {
         {!improvementItems.length ? (
           <p className="meta">No major missing-evidence indicators detected for this provider.</p>
         ) : (
-          <ul className="improvement-list">
-            {improvementItems.map((item) => (
-              <li key={item}>
-                <span>{item}</span>{' '}
-                <Link href={`/contribute?provider=${encodeURIComponent(provider.provider_id)}&indicator=${encodeURIComponent(item)}`}>
-                  Contribute evidence for this
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <p className="improvement-summary">
+            Missing evidence areas include {improvementSummary}.{' '}
+            <Link href={`/contribute?provider=${encodeURIComponent(provider.provider_id)}`}>Contribute evidence</Link>.
+          </p>
         )}
       </section>
 

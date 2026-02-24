@@ -373,10 +373,13 @@ export default function ProvidersPage() {
               Sort
             </button>
 
-            <div className="download-actions">
-              <button type="button" className="pill-btn" onClick={downloadCsv}>Download CSV</button>
-              <button type="button" className="pill-btn" onClick={downloadJson}>Download JSON</button>
-            </div>
+            <details className="columns-menu download-menu">
+              <summary>Download</summary>
+              <div className="download-menu-options">
+                <button type="button" onClick={downloadCsv}>CSV</button>
+                <button type="button" onClick={downloadJson}>JSON</button>
+              </div>
+            </details>
           </div>
         </div>
 
